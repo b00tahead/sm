@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "./components/Container";
+import Header from "./layout/Header";
+import Main from "./layout/Main";
+import Footer from "./layout/Footer";
+import Intro from "./sections/Intro";
+import About from "./sections/About";
 
-function App() {
+const navLinks = [
+  { text: "email", url: "mailto:smay44@gmail.com" },
+  { text: "github", url: "https://github.com/b00tahead" },
+  { text: "linkedin", url: "https://www.linkedin.com/in/mayscott/" },
+];
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container>
+        <Header title="sm." links={navLinks} />
+        <Main>
+          <Intro />
+          <About />
+        </Main>
+        <Footer />
+      </Container>
+    </>
   );
 }
-
-export default App;
